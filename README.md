@@ -1,7 +1,9 @@
 # random_primo
-return metadata of random primo items as JSON
+
+return metadata of random primo items as JSON. see `book_100_2458.json` for example output.
 
 ## usage
+
 ```
 :~$ ./random_primo.py -h
 usage: random_primo.py [-h] [-p url] [-i code] [-n number] [-r type]
@@ -15,16 +17,21 @@ optional arguments:
   -n number   number of items to return (default: 100)
   -r type     resource type to return (default: book)
 ```
+
 to retrieve a random set of 100 books from L&C primo instance (default):
+
 ```
 :~$ ./random_primo.py
 ```
+
 to retrieve a random set of 250 ebooks from your primo instance:
+
 ```
 :~$ ./random_primo.py -p http://myprimo.myschool.edu/ -i MYSCHOOL -n 250 -r ebook
 ```
 
 ## notes
+
 - results have no particular order that I could determine.
 - uses the primo "xservice" brief search API - [more info here](https://developers.exlibrisgroup.com/primo/apis/webservices/xservices/search/briefsearch).
 - only returns the "display" parameter of the record for brevity, but you could [change that here](https://github.com/thatbudakguy/random_primo/blob/master/random_primo.py#L39).
